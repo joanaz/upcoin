@@ -1,0 +1,19 @@
+#docs {
+  margin: 0 auto;
+  width: 90%;
+
+  @include clearfix;
+
+  img {
+    height: 200px;
+  }
+
+  .history {
+    margin: 100px auto;
+
+    table {
+      width: 60%;
+      margin: auto;
+    }
+  }
+}

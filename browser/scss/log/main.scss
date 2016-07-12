@@ -1,0 +1,19 @@
+#log {
+  margin: 0 auto 300px;
+  width: 90%;
+
+  @include clearfix;
+
+  .dropdown-menu {
+    background-color: white !important;
+  }
+
+  button {
+    // margin: auto 10px;
+ 
+  }
+
+  .food {
+    margin: 100px auto;
+  }
+}

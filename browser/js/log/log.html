@@ -1,0 +1,49 @@
+<section id="log" >
+  <h1 align="center">What did you eat today?</h1>
+  <div class="row food" >
+    <div class="col-sm-4 col-md-3" >
+      <div class="jumbotron" >
+        <div class="responsive-container">
+          <div class="dummy"></div>
+          <div class="form-group img-container">
+            <!-- <div class="centerer"></div> -->
+            <div class="form-group ">
+              <textarea rows="8" class="form-control" placeholder="Image URL" ng-model="newFood.photo"></textarea>
+            </div>
+          </div>
+        </div>
+        <div style="height:150px;">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Food name" ng-model="newFood.name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="How many upcoins?" ng-model="newFood.quantity">
+          </div>
+          <button type="submit" class="btn btn-warning btn-block" ng-click="submit();">Add</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-3" ng-repeat="onefood in food">
+      <food-jumbotron food="onefood" ng-click="addScore(onefood.quantity);">
+      </food-jumbotron>
+    </div>
+  </div>
+  <hr>
+  <h1 align="center">You own <span class="xxl">{{score}} upcoins</span> for <em>{{dt | date:'MMM d'}}</em>!</h1>
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+      <p class="input-group">
+        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+    </div>
+    <div class="col-sm-3 col-md-3">
+      <button class="btn btn-default btn-block" ng-click="clear();">Clear</button>
+    </div>
+    <div class="col-sm-3 col-md-3">
+      <button class="btn btn-warning btn-block" ng-click="log();">OK, log it!</button>
+    </div>
+  </div>
+</section>
